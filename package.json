@@ -19,6 +19,7 @@
   "author": "Sami Sayegh",
   "license": "Apache-2.0",
   "devDependencies": {
+    "request": "^2.88.2",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"

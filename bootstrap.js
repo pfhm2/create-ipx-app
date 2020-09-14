@@ -1,4 +1,4 @@
-import {config} from './config';
+import config from './config.json';
 
 const {organizationId, pageId} = config;
 const url = `https://platform.cloud.coveo.com/rest/organizations/${organizationId}/pages/${pageId}/inappwidget/loader`;
