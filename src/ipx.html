@@ -1,0 +1,52 @@
+<div class="CoveoSearchInterface" id="search" data-auto-trigger-query="false" data-results-per-page="5">
+  <script type="text/context" class="CoveoPipelineContext"></script>
+  <div class="CoveoAnalytics"></div>
+  <div class="CoveoPromotedResultsBadge" data-show-badge-for-recommended-results="true"></div>
+  <section style="position:sticky; top:0; z-index:999999;">
+    <div class="coveo-search-section" style="background-color: #f3f5f7; margin-top:0; padding:20px;">
+      <div class="CoveoSearchbox" data-placeholder=""></div>
+    </div>
+  </section>
+  <div class="coveo-main-section">
+    <div class="coveo-results-column">
+      <div class="coveo-summary-section">
+        <span class="CoveoQuerySummary"></span>
+        <span class="CoveoQueryDuration"></span>
+      </div>
+      <div class="CoveoResultList" data-layout="list" data-wait-animation="fade" data-auto-select-fields-to-include="true">
+        <script class="result-template" type="text/html">
+          <div class="coveo-result-frame">
+            <div class="coveo-result-row" style="margin-bottom:7px;">
+              <div class="coveo-result-cell" style="vertical-align:middle;font-size:15px;">
+                <a class="CoveoResultLink" data-always-open-in-new-window="true"></a> | <span class="CoveoFieldValue" data-field="@sourcetype"></span>
+              </div>
+            </div>
+            <div class="coveo-result-row" style="font-size:13px;">
+              <div class="CoveoExcerpt"></div>
+            </div>
+          </div>
+        </script>
+      </div>
+      <div class="CoveoPager"></div>
+      <div class="CoveoRecommendation" data-enable-responsive-mode="false">
+        <script type="text/context" class="CoveoPipelineContext"></script>
+        <div class="CoveoAnalytics"></div>
+        <h2>Recommended articles for this page</h2>
+        <div class="CoveoResultList" data-layout="list" data-wait-animation="fade" data-auto-select-fields-to-include="true">
+          <script class="result-template" type="text/html">
+            <div class="coveo-result-frame">
+              <div class="coveo-result-row" style="margin-bottom:7px;">
+                <div class="coveo-result-cell coveo-no-wrap" style="vertical-align:middle;">
+                  <a class="CoveoResultLink" data-always-open-in-new-window="true"></a> | <span class="CoveoFieldValue" data-field="@sourcetype"></span>
+                </div>
+              </div>
+            </div>
+          </script>
+        </div>
+      </div>
+    </div>
+    <section class="footer">
+      <div class="CoveoLogo" data-target="_top"></div>
+    </section>
+  </div>
+</div>
