@@ -7,6 +7,8 @@
     "create-ipx-app": "node ./create-ipx-app.js"
   },
   "scripts": {
+    "start": "webpack-dev-server --open",
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -14,5 +16,10 @@
     "ipx"
   ],
   "author": "Sami Sayegh",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
 }
