@@ -16,10 +16,10 @@ jobs:
         node-version: 14.10.1
     - name: Publish if version has been updated
       uses: pascalgn/npm-publish-action@06e0830ea83eea10ed4a62654eeaedafb8bf50fc
-      with: # All of theses inputs are optional
+      with:
         tag_name: "v%s"
         tag_message: "v%s"
-        commit_pattern: "^Release (\\S+)"
+        commit_pattern: "%s"
         workspace: "."
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
