@@ -4,7 +4,7 @@
   "description": "A cli tool to create a starter IPX application",
   "main": "index.js",
   "bin": {
-    "create-ipx-app": "./create-ipx-app.js"
+    "create-ipx-app": "node ./create-ipx-app.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
