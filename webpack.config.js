@@ -1,12 +1,12 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/ipx.js',
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
+  entry: {
+    main: './src/ipx.js',
+    bootstrap: './bootstrap.js'
   },
-  devServer: {
-    contentBase: '.',
+  output: {
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'dist'),
   },
 };

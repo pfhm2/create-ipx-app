@@ -7,7 +7,8 @@
     "create-ipx-app": "node ./create-ipx-app.js"
   },
   "scripts": {
-    "start": "webpack-dev-server --open",
+    "start": "npm run build && npm run dev-server",
+    "dev-server": "webpack-dev-server --open",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
