@@ -42,10 +42,10 @@ class JoinResourcesPlugin {
   appendVendorResources() {
     const styleUrls = this.options.vendor.css;
     
-    for(const url in styleUrls) {
+    styleUrls.forEach(url => {
       const html = `<link rel="stylesheet" href="${url}" type="text/css"></link>`;
       this.appendHtml(html);
-    }
+    })
   }
 
   appendHtml(html) {
