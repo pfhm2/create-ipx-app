@@ -7,19 +7,28 @@ const CoveoPublishPlugin = require('./plugins/coveo-publish');
 const srcPath = path.resolve(__dirname, 'src');
 const distPath = path.resolve(__dirname, 'dist');
 
-module.exports = {
-  entry: {
-    ipx: './src/ipx.js',
-    bootstrap: './bootstrap.js'
-  },
-  output: {
-    filename: '[name].js',
-    path: distPath,
-  },
-  devServer: {
-    writeToDisk: true
-  },
-  plugins: [
+module.exports = () => {
+  const plugins = buildPlugins();
+
+  return {
+    entry: {
+      ipx: './src/ipx.js',
+      bootstrap: './bootstrap.js'
+    },
+    output: {
+      filename: '[name].js',
+      path: distPath,
+    },
+    devServer: {
+      writeToDisk: true
+    },
+    plugins
+  };
+
+}
+
+function buildPlugins() {
+  return [
     new CleanWebpackPlugin(),
     new CopyPlugin({
       patterns: [{
@@ -39,4 +48,4 @@ module.exports = {
       filename: path.join(distPath, 'ipx.html')
     })
   ]
-};
+}
