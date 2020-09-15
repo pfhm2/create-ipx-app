@@ -4,6 +4,9 @@ const CopyPlugin = require('copy-webpack-plugin');
 const JoinResourcesPlugin = require('./plugins/join-resources');
 const CoveoPublishPlugin = require('./plugins/coveo-publish');
 
+const srcPath = path.resolve(__dirname, 'src');
+const distPath = path.resolve(__dirname, 'dist');
+
 module.exports = {
   entry: {
     ipx: './src/ipx.js',
@@ -11,24 +14,26 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: distPath,
   },
   plugins: [
     new CleanWebpackPlugin(),
     new CopyPlugin({
       patterns: [{
-        from: path.resolve(__dirname, 'src/ipx.html'),
-        to: path.resolve(__dirname, 'dist')
+        from: path.resolve(srcPath, 'ipx.html'),
+        to: distPath
+      }, {
+        from: path.resolve(srcPath, 'ipx.css'),
+        to: distPath
       }]
     }),
     new JoinResourcesPlugin({
-      htmlFileName: path.resolve(__dirname, 'dist/ipx.html'),
-      js: [
-        path.resolve(__dirname, 'dist/ipx.js')
-      ],
+      htmlFileName: path.resolve(distPath, 'ipx.html'),
+      css: [path.resolve(distPath, 'ipx.css')],
+      js: [path.resolve(distPath, 'ipx.js')],
     }),
     new CoveoPublishPlugin({
-      filename: path.join(__dirname, 'dist/ipx.html')
+      filename: path.join(distPath, 'ipx.html')
     })
   ]
 };
