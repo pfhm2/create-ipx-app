@@ -48,4 +48,4 @@ class CoveoPublishPlugin {
   }
 }
 
-module.exports = {CoveoPublishPlugin}
+module.exports = CoveoPublishPlugin;
