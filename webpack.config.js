@@ -16,6 +16,9 @@ module.exports = {
     filename: '[name].js',
     path: distPath,
   },
+  devServer: {
+    writeToDisk: true
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new CopyPlugin({
