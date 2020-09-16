@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path = require('path');
-const pluginName = 'CoveoPublishPlugin';
+const pluginName = 'AssembleIPXTemplatePlugin';
 const {getWidget} = require('../api/get-widget');
 
 const distPath = path.resolve(__dirname, '../dist')
 
-class CoveoPublishPlugin {
+class AssembleIPXTemplatePlugin {
   constructor(options) {
     this.options = options;
   }
@@ -19,7 +19,7 @@ class CoveoPublishPlugin {
 
   async buildIPXHtml() {
     const {head} = await getWidget();
-    const body = fs.readFileSync(path.resolve(distPath, 'ipx.html'), 'utf-8')
+    const body = fs.readFileSync(this.options.ipxHtmlFileName, 'utf-8')
     
     let ipxHtml = fs.readFileSync(path.resolve(__dirname, '../templates/ipx-template.html'), 'utf-8');
     ipxHtml = ipxHtml.replace('{{ipx-head}}', head)
@@ -29,4 +29,4 @@ class CoveoPublishPlugin {
   }
 }
 
-module.exports = CoveoPublishPlugin;
+module.exports = AssembleIPXTemplatePlugin;
