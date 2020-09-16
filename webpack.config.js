@@ -11,15 +11,16 @@ module.exports = () => {
   const plugins = buildPlugins();
 
   return {
+    mode: 'development',
     entry: {
       ipx: './src/ipx.js',
-      bootstrap: './bootstrap.js'
     },
     output: {
       filename: '[name].js',
       path: distPath,
     },
     devServer: {
+      contentBase: distPath,
       writeToDisk: true
     },
     plugins

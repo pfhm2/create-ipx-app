@@ -1,7 +1,7 @@
 const fs = require('fs');
+const path = require('path');
 const pluginName = 'CoveoPublishPlugin';
-const request = require('request');
-const config = require('../config.json');
+const {getWidget} = require('../api/get-widget');
 
 class CoveoPublishPlugin {
   constructor(options) {
@@ -9,42 +9,19 @@ class CoveoPublishPlugin {
   }
 
   apply(compiler) {
-    compiler.hooks.done.tap(pluginName, () => {
-      fs.readFile(this.options.filename, 'utf8', (err, data) => {
-        if (err) {
-          throw new Error(err);
-        }
-        
-        this.publishFile(data);
-      });
+    compiler.hooks.done.tapPromise(pluginName, async () => {
+      const res = await getWidget();
+      const {head} = res;
+      
+      const distPath = path.resolve(__dirname, '../dist')
+      const body = fs.readFileSync(path.resolve(distPath, 'ipx.html'), 'utf-8');
+      
+      let index = fs.readFileSync(path.resolve(__dirname, '../index.html'), 'utf-8');
+      index = index.replace('{{ipx-head}}', head)
+      index = index.replace('{{ipx-body}}', body);
+      
+      fs.writeFileSync(path.resolve(distPath, 'index.html'), index)
     });
-  }
-
-  publishFile(fileContents) {
-    const options = this.buildRequestOptions(fileContents);
-
-    request(options, function(error, response) {
-      if (error) throw new Error(error);
-      console.log('*********************');
-      console.log('Synchronized successfully', response.statusCode);
-      console.log('*********************');
-    });
-  }
-
-  buildRequestOptions(data) {
-    const {organizationId, pageName, apiKey} = config;
-    const url = `https://search.cloud.coveo.com/pages/${organizationId}/${pageName}`;
-    const options = {
-      method: 'POST',
-      url,
-      headers: {
-        authorization: `Bearer ${apiKey}`,
-        'Content-Type': 'text/html'
-      },
-      body: data
-    };
-
-    return options;
   }
 }
 
