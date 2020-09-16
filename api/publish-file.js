@@ -1,21 +1,12 @@
-const request = require('request');
 const config = require('../config.json');
+const fetch = require('cross-fetch');
 
-function publishFile(fileContents) {
-  const options = buildRequestOptions(fileContents);
-
-  request(options, function(error, response) {
-    if (error) throw new Error(error);
-    console.log('Synchronized successfully', response.statusCode);
-  });
-}
-
-function buildRequestOptions(data) {
+async function publishFile(fileContents) {
   const {organizationId, pageName, apiKey} = config;
   const url = `https://search.cloud.coveo.com/pages/${organizationId}/${pageName}`;
+  
   const options = {
     method: 'POST',
-    url,
     headers: {
       authorization: `Bearer ${apiKey}`,
       'Content-Type': 'text/html'
@@ -23,7 +14,8 @@ function buildRequestOptions(data) {
     body: data
   };
 
-  return options;
+  const res = await fetch(url, options)
+  console.log('Synchronized successfully', res.statusCode);
 }
 
 module.exports = {publishFile}
