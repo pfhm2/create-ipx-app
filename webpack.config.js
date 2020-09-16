@@ -11,7 +11,7 @@ module.exports = () => {
   const plugins = buildPlugins();
 
   return {
-    mode: 'development',
+    mode: 'production',
     entry: {
       ipx: './src/ipx.js',
     },
@@ -32,7 +32,12 @@ function buildPlugins() {
   return [
     new CleanWebpackPlugin(),
     new CopyPlugin({
-      patterns: [{
+      patterns: [
+      {
+        from: path.resolve(__dirname, 'templates/index.html'),
+        to: distPath
+      },
+      {
         from: path.resolve(srcPath, 'ipx.html'),
         to: distPath
       }, {
