@@ -1,7 +1,7 @@
 const config = require('../config.json');
 const fetch = require('cross-fetch');
 
-async function publishFile(fileContents) {
+async function publishFile(data) {
   const {organizationId, pageName, apiKey} = config;
   const url = `https://search.cloud.coveo.com/pages/${organizationId}/${pageName}`;
   
@@ -15,7 +15,7 @@ async function publishFile(fileContents) {
   };
 
   const res = await fetch(url, options)
-  console.log('Synchronized successfully', res.statusCode);
+  console.log('Synchronized successfully', res.status);
 }
 
 module.exports = {publishFile}
