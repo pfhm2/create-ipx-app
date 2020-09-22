@@ -5,7 +5,7 @@ A cli tool to create a starter IPX application.
 
 ## Getting started
 
-1. Clone the repo: `https://github.com/coveooss/create-ipx-app.git`
+1. Fork the repo and clone your local copy.
 2. Install dependencies: `npm i`
 3. Add your IPX configuration inside `config.json`.
 
