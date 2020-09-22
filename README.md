@@ -7,7 +7,7 @@ A cli tool to create a starter IPX application.
 
 1. Fork the repo and clone your local copy.
 2. Install dependencies: `npm i`
-3. Add your IPX configuration inside `config.json`.
+3. Add your IPX configuration inside the `config.json` file.
 
     **Note**: the API key must have both `Edit Search Pages` and `Execute Queries` privileges.
 
@@ -23,3 +23,4 @@ A cli tool to create a starter IPX application.
 
 - `npm start`: Starts the dev server.
 - `npm run publish`: Synchronizes your IPX with the cloud.
+- `npm run create:config`: Creates a config.json file.
