@@ -13,7 +13,8 @@ A cli tool to create a starter IPX application.
     - `pageId`: IPX id
     - `pageName`: IPX name
     - `apiKey` : API key created in the coveo platform
-        **Note**: the API key must have both `Edit Search Pages` and `Execute Queries` privileges.
+   
+    **Note**: the API key must have both `Edit Search Pages` and `Execute Queries` privileges.
     
 
 ## Workflow
