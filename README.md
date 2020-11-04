@@ -8,6 +8,12 @@ A cli tool to create a starter IPX application.
 1. Fork the repo and clone your local copy.
 2. Install dependencies: `npm i`
 3. Add your IPX configuration inside the `config.json` file.
+    {
+    "organizationId": "id of the coveo organization",
+    "pageId": "id of IPX",
+    "pageName": "name of IPX",
+    "apiKey": "an API key created in the coveo platform"
+    }
 
     **Note**: the API key must have both `Edit Search Pages` and `Execute Queries` privileges.
 
