@@ -25,6 +25,14 @@ You must add your IPX configuration inside the `config.json` file located at the
 
 - `apiKey` : An API key created in the Coveo Platform following [this documentation](https://docs.coveo.com/en/1718/manage-an-organization/manage-api-keys#add-an-api-key). You must grant this key the `Edit Search Pages` and `Execute Queries` privileges.
 
+## Pull the code for your IPX
+
+You can pull the code for your IPX from the Coveo platform through our API by running `npm run pull` to populate the `ipx.html`, `ipx.css` and `ipx.js` files in the `src/` folder with the source code of your IPX.
+
+All code found in the **body** of the IPX (referenced in the Code View of the IPX interface editor) will be parsed into the source files. Scripts or styles located in the header will not be pulled into the source files.
+
+**Note**: This will **overwrite** the contents of the files in the `src/` folder.
+
 ## Customize Your IPX
 
 You can customize your IPX by editing the files locating under the `src` folder (e.g., `/create-ipx-app/src/`).
@@ -37,7 +45,7 @@ This code is based on the [Coveo JavaScript Search Framework](https://docs.coveo
 
 ### ipx.css and ipx.js
 
-These files are empty, but can be used to further customize your IPX integration.
+These files can be used to further customize your IPX integration.
 
 ## Try It Out
 
@@ -59,4 +67,5 @@ Using this starter project, you can now manage multiple instances of IPX, each i
 
 - `npm start`: Starts the dev server.
 - `npm run publish`: Synchronizes your IPX with the cloud.
+- `npm run pull`: Pull the code for your IPX from the cloud.
 - `npm run create:config`: Creates a config.json file.
