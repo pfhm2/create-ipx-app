@@ -59,6 +59,10 @@ Once you are happy with your customized IPX, you can push the new code to the Co
 
 Now, your customized HTML, CSS, and JavaScript files will be used in your cloud-deployed IPX.
 
+## Log a Tampermonkey Userscript for easy testing
+
+Once published, if you wish to generate a Userscript to preview your IPX in your browser with a tool like Tampermonkey, run `npm run log:tampermonkey-script -- site` to log a Userscript that will match on all pages for `site`.
+
 ## More
 
 Using this starter project, you can now manage multiple instances of IPX, each independently managed through version control. This lets you use as many different IPX as you'd like, bind them to different pipelines, and give them a different look and feel.
@@ -69,3 +73,5 @@ Using this starter project, you can now manage multiple instances of IPX, each i
 - `npm run publish`: Synchronizes your IPX with the cloud.
 - `npm run pull`: Pull the code for your IPX from the cloud.
 - `npm run create:config`: Creates a config.json file.
+- `npm run log:ipx-loader-script`: Log the script snippet used to load your IPX.
+- `npm run log:tampermonkey-script`: Log a Userscript that can be used with tampermonkey to preview your IPX in your browser.
