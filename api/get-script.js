@@ -6,7 +6,7 @@ const config = require('../config.json');
  */
 function getLoaderUrl() {
     const { organizationId, pageId } = config;
-    const base = "https://platform.cloud.coveo.com";
+    const base = config.isHipaaOrg ? "https://platformhipaa.cloud.coveo.com" : "https://platform.cloud.coveo.com";
     return `${base}/rest/organizations/${organizationId}/pages/${pageId}/inappwidget/loader`;
 }
 

@@ -9,6 +9,7 @@ if (existsSync(filePath)) {
 
 const config = {
   organizationId: '',
+  isHipaaOrg: false,
   pageId: '',
   pageName: '',
   apiKey: ''

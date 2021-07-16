@@ -3,7 +3,7 @@ const fetch = require('cross-fetch');
 
 async function getWidget() {
   const {organizationId, pageId, apiKey} = config;
-  const base = 'https://search.cloud.coveo.com'
+  const base = config.isHipaaOrg ? 'https://searchhipaa.cloud.coveo.com' : 'https://search.cloud.coveo.com'
   const url = `${base}/pages/${organizationId}/inappwidget/${pageId}?json=1`;
 
   const options = {

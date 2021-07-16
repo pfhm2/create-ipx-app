@@ -17,6 +17,10 @@ You must add your IPX configuration inside the `config.json` file located at the
 
     You can find this id by navigating to the Administration Console and clicking the **Settings** gear in the upper-right corner. Under the **Organization** tab, select the **Information** menu. You'll see the **Organization ID** field.
 
+- `isHipaaOrg`: is the organization hosted on Coveo's HIPAA compliant environment. Defaults to `false`.
+
+    Your organization is HIPAA compliant if it is hosted on the https://platformhipaa.cloud.coveo.com administration platform.
+
 - `pageId`: the id of your IPX.
 
     You can find this id by navigating to the [In-Product Experiences](https://platform.cloud.coveo.com/admin/#/search/in-app-widgets) page of the Administration Console. The `pageId` is the section of the **Script URL** between `.../pages/` and `/inappwidget/...`. For example, if the script URL were `https://platform.cloud.coveo.com/rest/organizations/examplecomtemporaryczokqt72c/pages/a6dcedcf-2f37-4b3a-9f3c-c8e484df4f79/inappwidget/loader`, the `pageId` would be `a6dcedcf-2f37-4b3a-9f3c-c8e484df4f79`.
