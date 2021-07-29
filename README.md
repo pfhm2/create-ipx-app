@@ -61,6 +61,8 @@ If you have properly configured `config.json`, your IPX will already be linked t
 
 Once you are happy with your customized IPX, you can push the new code to the Coveo platform through our API by running `npm run publish` in the terminal in the root directory of your IPX project.
 
+**Note**: All code and dependencies in ipx.js will be bundled by webpack before being uploaded. Thus, running `npm run pull` after running `npm run publish` may not return the exact same javascript code. 
+
 Now, your customized HTML, CSS, and JavaScript files will be used in your cloud-deployed IPX.
 
 ## Log a Tampermonkey Userscript for easy testing
