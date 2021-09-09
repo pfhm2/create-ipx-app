@@ -3,6 +3,7 @@
 A CLI tool to customize a starter IPX application.
 
 This documentation covers how to use this project to customize an IPX through the source code. You should create an IPX before using this project; if you have not yet done so, see [Deploying an IPX Interface](https://docs.coveo.com/en/3160/build-a-search-ui/manage-coveo-in-product-experiences-ipx#deploying-an-ipx-interface-overview).
+Note: When using AU Organizations this project doesn't support requests from us-east-1 region.
 
 ## Getting Started
 
